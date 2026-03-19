@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartCity Chapecó | Monitoramento</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section id="login-screen">
+        <div class="login-container">
+            <header class="login-header">
+                <div class="logo-circle">SC</div>
+                <h1>Acesso ao Painel</h1>
+                <p>Gestão de Lixeiras Subterrâneas</p>
+            </header>
+            <div class="login-form">
+                <input type="email" id="email" placeholder="E-mail governamental">
+                <input type="password" id="pass" placeholder="Senha">
+                <button type="button" id="btn-entrar" onclick="entrar()">Acessar Sistema</button>
+            </div>
+        </div>
+    </section>
+
+    <main id="main-dashboard" class="hidden">
+        <nav class="navbar">
+            <div class="nav-brand">SMART<strong>CITY</strong> <span class="badge">Chapecó</span></div>
+            <div class="nav-info">Olá, <strong>Person</strong> | <a href="#" onclick="location.reload()">Sair</a></div>
+        </nav>
+
+        <div class="app-content">
+            <div id="map"></div>
+            
+            <aside class="sidebar">
+                <div class="sidebar-info">
+                    <h2>Status Global</h2>
+                    <div class="stat-row">
+                        <div class="stat-card">
+                            <span>Total</span>
+                            <strong id="total-count">0</strong>
+                        </div>
+                        <div class="stat-card alert">
+                            <span>Crítico</span>
+                            <strong id="full-count">0</strong>
+                        </div>
+                    </div>
+                </div>
+                <div id="lixeiras-lista" class="scroll-list">
+                    </div>
+            </aside>
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+</body>
+</html>
